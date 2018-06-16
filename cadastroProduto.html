@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastro</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<style type="text/css">
+.Cadastro {
+}
+</style>
+
+</head>
+<body>
+<nav class="navbar-custom">
+  <div class="container"> 
+    
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html">Inicio</a> </div>
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+<p></p>
+<p></p>
+	
+<div class="container">
+	<p></p>
+        <form method="post" action="javascript:enviar()" enctype="multipart/form-data" name="cadastro">
+    <p></p>
+    <div class="form-group">
+	
+        <input type="hidden" class="form-control" name="acao" id="acao" maxlength="60" value="cadastra">
+    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" maxlength="60">
+    <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição" maxlength="120">
+    <input type="text" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade" maxlength="6">
+    <input type="text" class="form-control" name="preco" id="preco" placeholder="Preço" maxlength="6">
+ 
+	<div class="form-group">
+  <label class="label label-info">Selecione uma categoria</label>
+  <select class="form-control" name="categoria" id="categoria">  
+  </select>
+</div>
+<p>
+</p>
+<input type="submit" class="btn btn-primary" value="Cadastrar">
+</div>
+</form>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>D.Soluções ©. TODOS OS DIREITOS RESERVADOS.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+<script src="js/cadastroProduto.js"></script>
+</body>
+</html>

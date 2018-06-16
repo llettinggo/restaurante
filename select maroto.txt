@@ -1,0 +1,7 @@
+SELECT v.venda_id, v.data, v.pagamento, cli.nome, p.nome AS produto_nome, cad.quantidade, p.preco as valor_unitario, (p.preco * cad.quantidade) AS valor_total FROM `venda` AS v
+
+LEFT JOIN `cliente` AS cli ON v.usuario_id = cli.usuario_id
+LEFT JOIN `caderneta` AS cad ON v.venda_id = cad.venda_id
+LEFT JOIN `produto` AS p ON cad.produto_id = p.produto_id
+
+WHERE v.venda_id = 1
