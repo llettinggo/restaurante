@@ -4,9 +4,9 @@ function enviar() {
     var $arrCliente = document.getElementsByClassName('listNomes');
     var radio;
     if (document.getElementById("pagamen").value === 'Avista') {
-        radio = "sim";
+        radio = "Sim";
     } else {
-        radio = "nao";
+        radio = "Nao";
     }
 
     var venda = {'produtos': [], 'data': new Date(), 'pagamento': radio};

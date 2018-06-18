@@ -32,7 +32,14 @@ class CRUDCaderneta {
         $sql->execute();
         echo json_encode($sql->fetchAll(PDO::FETCH_OBJ));
     }
-
+    
+    public function listaPico($data) {
+        $data1 = $data.'T00:00:00';
+        $data2 = $data.'T23:59:59';
+        $sql = $this->conn->conectar()->prepare("SELECT COUNT(`produto_id`) AS 'qtd', HOUR(CAST(`data` AS DATETIME)) AS 'hora' FROM `caderneta` WHERE `data` BETWEEN '$data1' AND '$data2' GROUP BY HOUR(CAST(`data` AS DATETIME))");
+        $sql->execute();
+        echo json_encode($sql->fetchAll(PDO::FETCH_OBJ));
+    }
 
     function editar($usuario_id, $nome, $cidade, $bairro, $rua, $complemento, $referencia, $email, $telefone, $cpf) {
         $sql = $this->conn->conectar()->prepare("UPDATE cliente SET nome='$nome', cidade='$cidade', bairro='$bairro',rua='$rua',complemento='$complemento',referencia='$referencia', email='$email', telefone='$telefone', cpf='$cpf' WHERE usuario_id='$usuario_id'");

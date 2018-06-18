@@ -55,7 +55,6 @@ class CRUDCategoria {
         echo($nome);
         echo($descricao);
         $sql = $this->conn->conectar()->prepare("UPDATE categoria SET nome='$nome',descricao='$descricao' WHERE categoria_id='$categoria_id'");
-
         $sql->execute();
     }
 

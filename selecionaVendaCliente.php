@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                             <label>Total: </label>
-                            <input class="resultValorTotal form-control" />
+                            <input class="resultValorTotal form-control" disabled /> 
                         </div><!-- /accordion -->
                         <div class="form-group">
                         <select class="form-control" name="pagamen" id="pagamen">  
@@ -137,7 +137,7 @@
                         </select>
                     </div>
                         <br>
-                        <input type="submit" class="btn btn-primary" value="Fechar Venda">
+                        <input type="submit" class="btn btn-warning" value="Fechar Venda">
                     </form>
                 </div> 
             </div>

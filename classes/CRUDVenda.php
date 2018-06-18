@@ -22,7 +22,7 @@ class CRUDVenda {
     }
         
     public function listar() {
-        $sql = $this->conn->conectar()->prepare("SELECT * FROM produto");
+        $sql = $this->conn->conectar()->prepare("SELECT * FROM venda");
         $sql->execute();
         echo json_encode($sql->fetchAll(PDO::FETCH_OBJ));
     }
