@@ -90,6 +90,10 @@ class CRUDProduto {
 
         $sql->execute();
     }
+    function debito($usuario_id, $quantidade) {
+        $sql = $this->conn->conectar()->prepare("UPDATE produto SET quantidade = (quantidade - {$quantidade}) WHERE produto_id='$usuario_id'");
+        $sql->execute();
+    }
 
     function excluir($usu_codigo) {
         $sql = $this->conn->conectar()->prepare('DELETE FROM `cliente` WHERE usuario_id = :id');

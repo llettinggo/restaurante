@@ -3,6 +3,7 @@
 require_once '../classes/Conexao.php';
 require_once '../classes/CRUDVenda.php';
 require_once '../classes/CRUDCaderneta.php';
+require_once '../classes/CRUDProduto.php';
 
 
 switch ($_POST['acao']) {
@@ -12,6 +13,7 @@ switch ($_POST['acao']) {
         $venda = json_decode($_POST["dados"]);
 
         $obj = new CRUDVenda();          
+        $objos = new CRUDProduto();          
         $conn = new Conexao();
         $obj->cadastra($venda);
         
@@ -22,7 +24,8 @@ switch ($_POST['acao']) {
         $objto = new CRUDCaderneta();
         $max=sizeof($venda->produtos);
         for($i =0; $i<$max;$i++){
-            $objto->cadastra($num_rows,$venda->produtos[$i]->id,$venda->produtos[$i]->qtd,$venda->produtos[$i]->nom);
+            $objto->cadastra($num_rows,$venda->produtos[$i]->id,$venda->produtos[$i]->qtd,$venda->produtos[$i]->nom,$venda->produtos[$i]->prc,$venda->data);
+            $objos->debito($venda->produtos[$i]->id,$venda->produtos[$i]->qtd);
         }
         
 

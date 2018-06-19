@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 18, 2018 at 01:15 PM
--- Server version: 5.7.22-0ubuntu18.04.1
--- PHP Version: 7.2.5-0ubuntu0.18.04.1
+-- Host: localhost
+-- Generation Time: 19-Jun-2018 às 15:58
+-- Versão do servidor: 5.7.17-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `caderneta`
+-- Estrutura da tabela `caderneta`
 --
 
 CREATE TABLE `caderneta` (
@@ -36,14 +36,14 @@ CREATE TABLE `caderneta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `caderneta`
+-- Extraindo dados da tabela `caderneta`
 --
 
 INSERT INTO `caderneta` (`venda_id`, `produto_id`, `quantidade`, `produto_nome`, `preco`, `data`) VALUES
-(1, 1, 2, 'david', 2.5, '2018-06-08T11:08:38.563Z'),
-(1, 3, 1, 'Sucos', 2.5, '2018-06-08T11:08:38.563Z'),
-(1, 5, 1, 'asd', 2.5, '2018-06-08T11:08:38.563Z'),
-(1, 6, 5, 'teste', 12.5, '2018-06-08T11:08:38.563Z'),
+(1, 1, 2, 'david', 2.5, '2018-06-08T12:08:38.563Z'),
+(1, 3, 1, 'Sucos', 2.5, '2018-06-08T12:08:38.563Z'),
+(1, 5, 1, 'asd', 2.5, '2018-06-08T11:09:38.563Z'),
+(1, 6, 5, 'teste', 12.5, '2018-06-08T11:09:38.563Z'),
 (2, 1, 1, 'david', 2.5, '2018-07-08T11:08:38.563Z'),
 (2, 5, 5, 'asd', 2.5, '2018-07-08T11:08:38.563Z'),
 (2, 6, 5, 'teste', 12.5, '2018-07-08T11:08:38.563Z'),
@@ -56,12 +56,13 @@ INSERT INTO `caderneta` (`venda_id`, `produto_id`, `quantidade`, `produto_nome`,
 (4, 9, 1, 'Suco Maracuja', 2.5, '2018-09-08T11:08:38.563Z'),
 (5, 1, 1, 'Suco Laranja', 2.5, '2018-10-08T11:08:38.563Z'),
 (5, 3, 1, 'Suco Manga', 2.5, '2018-10-08T11:08:38.563Z'),
-(5, 9, 1, 'Suco Maracuja', 2.5, '2018-10-08T11:08:38.563Z');
+(5, 9, 1, 'Suco Maracuja', 2.5, '2018-10-08T11:08:38.563Z'),
+(6, 1, 5, 'Suco Laranja', 2.5, '2018-06-19T15:55:59.541Z');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -71,7 +72,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`categoria_id`, `nome`, `descricao`) VALUES
@@ -81,7 +82,7 @@ INSERT INTO `categoria` (`categoria_id`, `nome`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cliente`
+-- Estrutura da tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -98,7 +99,7 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cliente`
+-- Extraindo dados da tabela `cliente`
 --
 
 INSERT INTO `cliente` (`usuario_id`, `nome`, `cidade`, `bairro`, `rua`, `complemento`, `referencia`, `email`, `telefone`, `cpf`) VALUES
@@ -109,7 +110,7 @@ INSERT INTO `cliente` (`usuario_id`, `nome`, `cidade`, `bairro`, `rua`, `complem
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produto`
+-- Estrutura da tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -123,24 +124,24 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `produto`
+-- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`produto_id`, `nome`, `descricao`, `quantidade`, `categoria_id`, `categoria_nome`, `preco`) VALUES
-(1, 'Suco Laranja', 'Sucos de diversos sabores ', 5, 2, 'Sucos', 2.5),
-(2, 'Suco Morango', '1', 0, 7, 'Teste', 2.5),
-(3, 'Suco Manga', 'Sucos de diversos sabores ', 5, 7, 'Teste', 2.5),
-(4, 'Suco Limão', 'Sucos de diversos sabores ', 5, 7, 'Teste', 2.5),
-(5, 'Suco Tangirina', 'asd', 1, 7, 'Teste', 2.5),
-(6, 'Suco Graviola', 'asdqwee', 1, 7, 'Teste', 2.5),
-(8, 'Suco Melão', 'pizza', 3, 7, 'Teste', 2.5),
-(9, 'Suco Maracuja', 'Sucos de diversos sabores ', 5, 2, 'Sucos', 2.5),
-(10, 'Suco Beterraba', 'Teste de categoria', 1, 7, 'Teste', 2.5);
+(1, 'Suco Laranja', 'Sucos de diversos sabores ', 20, 2, 'Sucos', 2.5),
+(2, 'Suco Morango', '1', 50, 7, 'Teste', 2.5),
+(3, 'Suco Manga', 'Sucos de diversos sabores ', 30, 7, 'Teste', 2.5),
+(4, 'Suco Limão', 'Sucos de diversos sabores ', 20, 7, 'Teste', 2.5),
+(5, 'Suco Tangirina', 'asd', 50, 7, 'Teste', 2.5),
+(6, 'Suco Graviola', 'asdqwee', 10, 7, 'Teste', 2.5),
+(8, 'Suco Melão', 'pizza', 25, 7, 'Teste', 2.5),
+(9, 'Suco Maracuja', 'Sucos de diversos sabores ', 30, 2, 'Sucos', 2.5),
+(10, 'Suco Beterraba', 'Teste de categoria', 80, 7, 'Teste', 2.5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `venda`
+-- Estrutura da tabela `venda`
 --
 
 CREATE TABLE `venda` (
@@ -151,7 +152,7 @@ CREATE TABLE `venda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `venda`
+-- Extraindo dados da tabela `venda`
 --
 
 INSERT INTO `venda` (`venda_id`, `usuario_id`, `data`, `pagamento`) VALUES
@@ -159,7 +160,9 @@ INSERT INTO `venda` (`venda_id`, `usuario_id`, `data`, `pagamento`) VALUES
 (2, 1, '2018-06-08T11:08:38.563Z', 'Sim'),
 (3, 1, '2018-06-08T12:41:31.000Z', 'nao'),
 (4, 1, '2018-06-08T15:08:19.867Z', 'nao'),
-(5, 2, '2018-06-08T15:08:33.560Z', 'nao');
+(5, 2, '2018-06-08T15:08:33.560Z', 'nao'),
+(6, 1, '2018-06-19T15:33:55.718Z', 'Nao'),
+(7, 1, '2018-06-19T15:38:54.082Z', 'Nao');
 
 --
 -- Indexes for dumped tables
@@ -218,7 +221,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `venda_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `venda_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -9,7 +9,7 @@ function enviar() {
         radio = "Nao";
     }
 
-    var venda = {'produtos': [], 'data': new Date(), 'pagamento': radio};
+    var venda = {'produtos': [], 'data': new Date(), 'pagamento': radio, 'preco': radio};
 
     for (const item of $arrCliente) {
         if ($(item).val() == $('#clientes .userId').val()) {
@@ -23,7 +23,8 @@ function enviar() {
             var _produto = {
                 'id': _linha.find(".produtoId").text(),
                 'qtd': _linha.find('.produtoQtd input').val(),
-                'nom': _linha.find('.produtoNom').text()
+                'nom': _linha.find('.produtoNom').text(),
+                'prc': _linha.find('.produtoPreco').text()
             };
 
             venda.produtos.push(_produto);

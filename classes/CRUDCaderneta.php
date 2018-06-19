@@ -12,13 +12,15 @@ class CRUDCaderneta {
     }
 
 //    public function cadastra($cliente,$data,$pagamento) {
-    public function cadastra($venda_id,$produto_id,$quantidade,$produto_nome) {
+    public function cadastra($venda_id,$produto_id,$quantidade,$produto_nome,$data,$preco) {
 
-        $sql = $this->conn->conectar()->prepare("INSERT INTO `caderneta`(`venda_id`, `produto_id`, `quantidade`,`produto_nome`) VALUES (:venda_id,:produto_id,:quantidade,:produto_nome);");
+        $sql = $this->conn->conectar()->prepare("INSERT INTO `caderneta`(`venda_id`, `produto_id`, `quantidade`,`produto_nome`, `preco`, `data`) VALUES (:venda_id,:produto_id,:quantidade,:produto_nome,:data,:preco);");
         $sql->bindParam(":venda_id", $venda_id, PDO::PARAM_INT);
         $sql->bindParam(":produto_id", $produto_id, PDO::PARAM_INT);
         $sql->bindParam(":quantidade", $quantidade, PDO::PARAM_INT);
         $sql->bindParam(":produto_nome", $produto_nome, PDO::PARAM_STR);
+        $sql->bindParam(":data", $data, PDO::PARAM_STR);
+        $sql->bindParam(":preco", $preco, PDO::PARAM_INT);
         $sql->execute();
     }
         
